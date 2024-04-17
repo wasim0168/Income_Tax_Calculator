@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/bootstrap.bundle.js">
+    <link rel="stylesheet" href="js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!--  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+         
+    <title>Document</title>
+</head>
+<style>
+  
+    .navbar{
+        height: 3rem;
+        background-color: #9dacba;
+    }
+   
+    #income::placeholder{
+        font-weight: bold;
+        color: #c4cfd9;
+    }
+    .bi-three-dots{
+        display: block;
+        position: absolute;
+    }
+    #extraIncome::placeholder{
+        font-weight: bold;
+        color: #c4cfd9;
+    }
+    #deductions::placeholder{
+        font-weight: bold;
+        color: #c4cfd9;
+
+    }
+    .input-group-text {
+      background-color: transparent;
+      border: none;
+    }
+    .custom-tooltip{
+        background-color: aqua;
+    }
+    
+   
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg">
+            <svg xmlns="http://www.w3.org/2000/svg"  width="80" height="80" fill="rgb(143, 158, 171)" class="bi bi-three-dots" viewBox="0 0 16 16">
+                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+            </svg>
+        </nav>
+
+    <div class="mt-5">
+      
+    </div>
+    <div class="mt-3">
+
+    </div>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+        <form id="taxForm">
+            <div class="mb-5">
+            </div>
+            <div class="mb-3 mt-3 " >
+                <label for="income" class="d-inline mx-5">Enter Gross Annual Income
+                <span style="position: absolute;" data-toggle="tooltip" data-placement="top" title="Gross Annual income &#10 is your total &#10 salary in a year &#10 before any &#10 deductions">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+                      </svg>
+                  </span>
+                </label>
+                <input type="number" class="form-control w-75 mx-5" id="income" placeholder="Enter the Gross Annual Income" >
+                <span data-toggle="tooltip" data-placement="top" title="Please enter number only" style="position: absolute;top: 4.5rem;left: 75%;">
+                    <span class="input-group-text"  ><i class="bi bi-exclamation-circle"></i></span>
+                <span class="error-icon" id="incomeError">!</span>
+            </span>
+              </div>
+            <div class="mb-3 " >
+                <label for="extraIncome" class="d-inline mx-5">Enter extra Income
+                <span data-toggle="tooltip" data-placement="top" title="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+                      </svg>
+                  </span>
+                </label>
+                <input type="number" class="form-control w-75 mx-5" id="extraIncome" placeholder="Enter extra income from other sorces" >
+                <span class="error-icon" id="incomeError">!</span>
+              </div>
+            <div class="mb-3" >
+                <label for="age" class="d-block mx-5">Enter age group
+                <span data-toggle="tooltip" data-placement="top" title="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+                      </svg>
+                  </span>
+                </label>
+                <select class="custom-select w-75 mx-5" id="age">
+                    <option value="< 40">&lt; 40</option>
+                    <option value="40-60">&ge; 40 &lt; 60</option>
+                    <option value="≥60">&ge; 60</option>
+                     </select>
+                <span class="error-icon" id="ageError">!</span>
+              </div>
+            <div class="mb-3" >
+                <label  for="deductions" class=" mx-5">Enter total applicable deductions
+                <span data-toggle="tooltip" data-placement="top" title="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+                      </svg>
+                  </span>
+                </label>
+                <input type="number" class="form-control w-75 mx-5" id="deductions" placeholder="add total applicable deductions" >
+                <span class="error-icon" id="deductionsError">!</span>
+              </div>
+              
+              <div class="mt-5">
+              <button type="submit" class="w-75 rounded text-white mx-5" style="background-color: #6559f5;border: none;height: 2rem;" >Submit</button>
+            </div>
+            <div class="mb-5">
+
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="mb-5"></span>
+            <span class="mb-5"></span>
+            <h2 class="text-center">your overall income will be</h2>
+            <p id="taxResult" class="text-center fs-4 fw-bold"></p>
+            <p class="text-center fw-bold">after tax deductions</p>
+            <button type="button" id="" class=" cut text-white rounded mx-auto" style="width: 5rem; background-color: #6559f5;border: none;height: 2rem;">Close</button>
+        </div>
+    </div>
+
+
+
+    <button type="button" class="btn btn-secondary"
+        data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-custom-class="custom-tooltip"
+        data-bs-title="This top tooltip is themed via CSS variables.">
+  Custom tooltip
+</button>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+    <script>
+     $(document).ready(function() {
+    $(".error-icon").hide();
+    $("#taxForm").submit(function(event) {
+        event.preventDefault();
+        $(".error-icon").hide(); 
+        var age = $("#age").val();
+        var income = parseFloat($("#income").val());
+        var extraIncome = parseFloat($("#extraIncome").val());
+        var deductions = parseFloat($("#deductions").val());
+        if (!age) {
+            $("#ageError").show().attr("title", "Age field is mandatory");
+            return;
+        }
+
+        if (isNaN(income)) {
+            $("#incomeError").show().attr("title", "Please enter a valid number");
+            return;
+        }
+        if (isNaN(extraIncome)) {
+            $("#extraIncomeError").show().attr("title", "Please enter a valid number");
+            return;
+        }
+        if (isNaN(deductions)) {
+            $("#deductionsError").show().attr("title", "Please enter a valid number");
+            return;
+        }
+        var tax = 0;
+        var taxableIncome = income + extraIncome - deductions;
+
+        if (taxableIncome > 800000) {
+            if (age === "< 40") {
+                tax = 0.3 * (taxableIncome - 800000);
+            } else if (age === "40-60") {
+                tax = 0.4 * (taxableIncome - 800000);
+            } else if (age === "≥60") {
+                tax = 0.1 * (taxableIncome - 800000);
+            }
+        }
+        $("#taxResult").text((tax / 100000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+
+        $("#resultModal").show();
+    });
+    $(".cut").click(function() {
+        $("#resultModal").hide();
+    });
+});
+
+
+    </script>
+</body>
+</html>
